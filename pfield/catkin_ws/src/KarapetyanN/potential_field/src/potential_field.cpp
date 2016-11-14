@@ -294,13 +294,13 @@ public:
                               move(linear_v, 0);
                       }
                   }
-                  if(prevPose.x == pose[i].x && prevPose.y == pose[i].y){
+                  /*if(prevPose.x == pose[i].x && prevPose.y == pose[i].y){
 					moveStartTime = ros::Time::now();
 					rotateDuration = ros::Duration(double(1 + (rand()%7)) ); //to rotate in [ pi/4 , 3*Pi/2] range
                       while(moveStartTime - ros::Time::now() < moveDuration && d > D_SAFE + EPS) {
                       move(-linear_v,0);
                       }
-                  }
+                  }*/
               }
     
         // Demo code: print each robot's pose

@@ -1,8 +1,0 @@
-prefix=/home/ubundr/catkin_ws/install
-
-Name: grid_mapper
-Description: Description of grid_mapper
-Version: 0.0.1
-Cflags: 
-Libs: -L/home/ubundr/catkin_ws/install/lib 
-Requires: message_runtime roscpp rospy std_msgs tf geometry_msgs nav_msgs visualization_msgs sensor_msgs
