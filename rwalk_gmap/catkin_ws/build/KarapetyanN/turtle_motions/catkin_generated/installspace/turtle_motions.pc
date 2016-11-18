@@ -1,0 +1,8 @@
+prefix=/home/turtlebot/nk/rwalk_gmap/catkin_ws/install
+
+Name: turtle_motions
+Description: Description of turtle_motions
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/turtlebot/nk/rwalk_gmap/catkin_ws/install/lib 
+Requires: 
