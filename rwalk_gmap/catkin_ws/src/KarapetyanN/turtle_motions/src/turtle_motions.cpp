@@ -36,7 +36,7 @@ class TurtleMotions {
 
 				poseSub_1 = nh.subscribe("odom", 1, \
 						&TurtleMotions::poseCallback_1, this);
-				poseSub_2 = nh.subscribe("robot_pose_efk/odom_combined", 1, \
+				poseSub_2 = nh.subscribe("odom_combined", 1, \
 						&TurtleMotions::poseCallback_2, this);
 			}
 
@@ -50,6 +50,7 @@ class TurtleMotions {
 
 		void poseCallback_1(const nav_msgs::Odometry::ConstPtr& msg) {
 			double roll, pitch;
+std::cout << "JFDHLKHDJKHSFHFDFHD\n";
 			x_1 = msg->pose.pose.position.x;
 			y_1 = msg->pose.pose.position.y;
 std::cout << x_1 << " -- " << y_1 << std::endl;
