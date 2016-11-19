@@ -14,7 +14,7 @@ class TurtleMotions {
 	public:
 		// Construst a new TurtleMotions object and hook up this ROS node
 		// to the simulated robot's velocity control and laser topics
-		TurtleMotions(ros::NodeHandle& nh, int cmd, int val) :
+		TurtleMotions(ros::NodeHandle& nh, int cmd, double val) :
 			m_cmd(static_cast<CMD>(cmd)), m_val(val),
 			fsm(FSM_MOVE_FORWARD),
 			rotateStartTime(ros::Time::now()),
@@ -50,19 +50,19 @@ class TurtleMotions {
 
 		void poseCallback_1(const nav_msgs::Odometry::ConstPtr& msg) {
 			double roll, pitch;
-std::cout << "JFDHLKHDJKHSFHFDFHD\n";
+			std::cout << "JFDHLKHDJKHSFHFDFHD\n";
 			x_1 = msg->pose.pose.position.x;
 			y_1 = msg->pose.pose.position.y;
-std::cout << x_1 << " -- " << y_1 << std::endl;
+			std::cout << x_1 << " -- " << y_1 << std::endl;
 			// x = -msg->pose.pose.position.y;
 			//y = msg->pose.pose.position.x;
 			heading_1=tf::getYaw(msg->pose.pose.orientation);
 		};
 
 		void poseCallback_2(const nav_msgs::Odometry::ConstPtr& msg) {
-std::cout << "IS THIS EVEN CALLED\n";
+			std::cout << "IS THIS EVEN CALLED\n";
 			double roll, pitch;
-std::cout << x_2 << " -- " << y_2 << std::endl;
+			std::cout << x_2 << " -- " << y_2 << std::endl;
 			x_2 = msg->pose.pose.position.x;
 			y_2 = msg->pose.pose.position.y;
 			// x = -msg->pose.pose.position.y;
@@ -82,13 +82,13 @@ std::cout << x_2 << " -- " << y_2 << std::endl;
 				move(FORWARD_SPEED_MPS, 0);
 				odom_d += sqrt(pow(prev_x_1 - x_1, 2) + pow(prev_y_1 - y_1, 2));
 				odom_comb_d += sqrt(pow(prev_x_2 - x_2, 2) + pow(prev_y_2 - y_2, 2));
-			/*	prev_x_1 = x_1;
-				prev_y_1 = y_1;
-				prev_x_2 = x_2;
-				prev_y_2 = y_2;*/
+				/*	prev_x_1 = x_1;
+					prev_y_1 = y_1;
+					prev_x_2 = x_2;
+					prev_y_2 = y_2;*/
 			}
-				odom_d = sqrt(pow(prev_x_1 - x_1, 2) + pow(prev_y_1 - y_1, 2));
-				odom_comb_d = sqrt(pow(prev_x_2 - x_2, 2) + pow(prev_y_2 - y_2, 2));
+			odom_d = sqrt(pow(prev_x_1 - x_1, 2) + pow(prev_y_1 - y_1, 2));
+			odom_comb_d = sqrt(pow(prev_x_2 - x_2, 2) + pow(prev_y_2 - y_2, 2));
 			std::cout << "\nodom Estimate : " << odom_d << std::endl;
 			std::cout << "\nodom_combined Estimate : " << odom_comb_d << std::endl;
 			move(0, 0);
@@ -96,10 +96,13 @@ std::cout << x_2 << " -- " << y_2 << std::endl;
 		
 		void rotate_rel(double angle) {
 			ros::Duration time = ros::Duration(abs(angle / ROTATE_SPEED_RADPS));
-			int i = (ROTATE_SPEED_RADPS > 0) ? 1 : -1;
+			double i = (angle > 0) ? 1.0 : -1.0;
 			while(ros::Time::now() - rotateStartTime < time) {
 				move(0, i*ROTATE_SPEED_RADPS);
 			}
+			//FIXME std::cout << "\nodom Estimate : " << odom_angle << std::endl;
+			//FIXME std::cout << "\nodom_combined Estimate : " << odom_comb_angle << std::endl;
+			move(0, 0);
 		}
 		
 		void rotate_abs(double angle) {
@@ -183,6 +186,11 @@ std::cout << x_2 << " -- " << y_2 << std::endl;
 					moveStartTime = ros::Time::now();
 					translate(m_val);
 				}
+				if(m_cmd == ROTATE_REL) {
+					rotateStartTime = ros::Time::now();
+std::cout << "vbbbbbbbbbbbbbbbbbbbb=> " << m_val << std::endl;
+					rotate_rel(m_val);
+				}
 				break;
 
 
@@ -260,7 +268,7 @@ int main(int argc, char **argv) {
 
 	bool printUsage = false;
 	int cmd = -1;
-	int val = -1;
+	double val = -1.0;
 
 	//--> Parse and validate input arguments
 	if (argc <= 2) {
@@ -268,7 +276,8 @@ int main(int argc, char **argv) {
 	} else {
 		try {
 			cmd = boost::lexical_cast<int>(argv[1]);
-			val = boost::lexical_cast<int>(argv[2]);
+			val = boost::lexical_cast<double>(argv[2]);
+			std::cout << "val======= " << val << std::endl;
 
 			if (cmd < 0) { printUsage = true; }
 			//else if (val <= 0) { printUsage = true; }
