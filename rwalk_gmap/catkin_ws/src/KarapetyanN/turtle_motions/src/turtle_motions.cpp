@@ -25,8 +25,9 @@ class TurtleMotions {
 				// Advertise a new publisher for the simulated robot's velocity command topic
 				// (the second argument indicates that if multiple command messages are in
 				// the queue to be sent, only the last command will be sent)
-				// DEBUG: for sim				commandPub = nh.advertise<geometry_msgs::Twist>("cmd_vel", 1);
-				//commandPub = nh.advertise<geometry_msgs::Twist>("follower_velocity_smoother/raw_cmd_vel", 1);
+                // DEBUG: for sim
+                // commandPub = nh.advertise<geometry_msgs::Twist>("cmd_vel", 1);
+                // commandPub = nh.advertise<geometry_msgs::Twist>("follower_velocity_smoother/raw_cmd_vel", 1);
 				commandPub = nh.advertise<geometry_msgs::Twist>("cmd_vel_mux/input/navi", 1);
 				// Subscribe to the simulated robot's laser scan topic and tell ROS to call
 				// this->commandCallback() whenever a new message is published on that topic
@@ -50,7 +51,6 @@ class TurtleMotions {
 
 		void poseCallback_1(const nav_msgs::Odometry::ConstPtr& msg) {
 			double roll, pitch;
-			std::cout << "JFDHLKHDJKHSFHFDFHD\n";
 			x_1 = msg->pose.pose.position.x;
 			y_1 = msg->pose.pose.position.y;
 			std::cout << x_1 << " -- " << y_1 << std::endl;
@@ -60,7 +60,6 @@ class TurtleMotions {
 		};
 
 		void poseCallback_2(const nav_msgs::Odometry::ConstPtr& msg) {
-			std::cout << "IS THIS EVEN CALLED\n";
 			double roll, pitch;
 			std::cout << x_2 << " -- " << y_2 << std::endl;
 			x_2 = msg->pose.pose.position.x;
@@ -72,25 +71,9 @@ class TurtleMotions {
 
 		void translate(double distance) {
 			ros::Duration time = ros::Duration(distance / FORWARD_SPEED_MPS) ;
-			double prev_x_1 = x_1;
-			double prev_y_1 = y_1;
-			double prev_x_2 = x_2;
-			double prev_y_2 = y_2;
-			double odom_d = 0.0;
-			double odom_comb_d = 0.0;
 			while(ros::Time::now() - moveStartTime < time) {
 				move(FORWARD_SPEED_MPS, 0);
-				odom_d += sqrt(pow(prev_x_1 - x_1, 2) + pow(prev_y_1 - y_1, 2));
-				odom_comb_d += sqrt(pow(prev_x_2 - x_2, 2) + pow(prev_y_2 - y_2, 2));
-				/*	prev_x_1 = x_1;
-					prev_y_1 = y_1;
-					prev_x_2 = x_2;
-					prev_y_2 = y_2;*/
 			}
-			odom_d = sqrt(pow(prev_x_1 - x_1, 2) + pow(prev_y_1 - y_1, 2));
-			odom_comb_d = sqrt(pow(prev_x_2 - x_2, 2) + pow(prev_y_2 - y_2, 2));
-			std::cout << "\nodom Estimate : " << odom_d << std::endl;
-			std::cout << "\nodom_combined Estimate : " << odom_comb_d << std::endl;
 			move(0, 0);
 		}
 		
@@ -100,8 +83,6 @@ class TurtleMotions {
 			while(ros::Time::now() - rotateStartTime < time) {
 				move(0, i*ROTATE_SPEED_RADPS);
 			}
-			//FIXME std::cout << "\nodom Estimate : " << odom_angle << std::endl;
-			//FIXME std::cout << "\nodom_combined Estimate : " << odom_comb_angle << std::endl;
 			move(0, 0);
 		}
 		
@@ -110,55 +91,8 @@ class TurtleMotions {
 
 		// Process the incoming laser scan message
 		void commandCallback(const sensor_msgs::LaserScan::ConstPtr& msg) {
-			if (fsm == FSM_MOVE_FORWARD) {
-				// Compute the average range value between MIN_SCAN_ANGLE and	MAX_SCAN_ANGLE
-				//
-				// NOTE: ideally, the following loop should have additional checks to ensure
-				// that indices are not out of bounds, by computing:
-				//
-				// - currAngle = msg->angle_min + msg->angle_increment*currIndex
-				//
-				// and then ensuring that currAngle <= msg->angle_max
-				unsigned int minIndex = ceil((MIN_SCAN_ANGLE_RAD - msg->angle_min) / msg->angle_increment);
-				unsigned int maxIndex = ceil((MAX_SCAN_ANGLE_RAD - msg->angle_min) / msg->angle_increment);
-				float closestRange = msg->ranges[minIndex];
-				if(closestRange > msg->range_min && closestRange < msg->range_max/2) {
-					for (unsigned int currIndex = minIndex + 1; currIndex < maxIndex; currIndex++) {
-						if (msg->ranges[currIndex] < closestRange) {
-							closestRange = msg->ranges[currIndex];
-						}
-					}
-					ROS_INFO_STREAM("Range: " << closestRange);
-					// TODO: if range is smaller than PROXIMITY_RANGE_M, update fsm and rotateStartTime,
-					// and also choose a reasonable rotateDuration (keeping in mind of the value
-					// of ROTATE_SPEED_RADPS)
-					//
-					// HINT: you can obtain the current time by calling:
-					//
-					// - ros::Time::now()
-					//
-					// HINT: you can set a ros::Duration by calling:
-					//
-					// - ros::Duration(DURATION_IN_SECONDS_FLOATING_POINT)
-					//
-					// HINT: you can generate a random number between 0 and 99 by calling:
-					//
-					// - rand() % 100
-					//
-					// see http://www.cplusplus.com/reference/clibrary/cstdlib/rand/ for more details
-					/////////////////////// ANSWER CODE BEGIN ///////////////////
-					std::cout << closestRange << "--\n";
-					std::cout << PROXIMITY_RANGE_M << "--\n";
-					std::cout << "fsm not is spin  -> " << fsm << "--\n";
-
-					if(closestRange < PROXIMITY_RANGE_M) {
-						fsm = FSM_ROTATE;
-					}
-
-					/////////////////////// ANSWER CODE END ///////////////////
-				}
-			}
 		}
+
 		void  cliffSensorCallback(const kobuki_msgs::CliffEventConstPtr msg) {
 			if (fsm == FSM_MOVE_FORWARD && msg->state == kobuki_msgs::CliffEvent::CLIFF)
 			{
@@ -180,45 +114,39 @@ class TurtleMotions {
 			double dir = (rand()%2 == 0) ? -1 : 1;
 			std::cout << "direction  " << dir << "--\n"; 
 			ros::Rate rate(10); // Specify the FSM loop rate in Hz
+
+			double odom_d = 0.0;
+			double odom_comb_d = 0.0;
+            double prev_x_1 = x_1;
+            double prev_y_1 = y_1;
+
+            double prev_x_2 = x_2;
+            double prev_y_2 = y_2;
+            bool end = false;
 			while (ros::ok()) { // Keep spinning loop until user presses Ctrl+C
 
-				if(m_cmd == MOVE) {
-					moveStartTime = ros::Time::now();
-					translate(m_val);
-				}
-				if(m_cmd == ROTATE_REL) {
-					rotateStartTime = ros::Time::now();
-std::cout << "vbbbbbbbbbbbbbbbbbbbb=> " << m_val << std::endl;
-					rotate_rel(m_val);
-				}
-				break;
+                odom_d += sqrt(pow(prev_x_1 - x_1, 2) + pow(prev_y_1 - y_1, 2));
+                odom_comb_d += sqrt(pow(prev_x_2 - x_2, 2) + pow(prev_y_2 - y_2, 2));
 
+                if(m_cmd == MOVE && end == true) {
+                    moveStartTime = ros::Time::now();
+                    translate(m_val);
+                    end = true;
+                }
+                prev_x_1 = x_1;
+                prev_y_1 = y_1;
 
-				/*******Random walk behaviour*******/
-				// TODO: Either call:
-				//
-				// - move(0, ROTATE_SPEED_RADPS); // Rotate right
-				//
-				// or
-				//
-				// - move(FORWARD_SPEED_MPS, 0); // Move foward
-				//
-				// depending on the FSM state; also change the FSM state when appropriate
-				/////////////////////// ANSWER CODE BEGIN ///////////////////
-				std::cout << "fsm in spin -> " << fsm << "--\n";
-				if(fsm == FSM_MOVE_FORWARD) {
-					//move(FORWARD_SPEED_MPS, 0);
-				} else {
-					rotateStartTime = ros::Time::now();
-					rotateDuration = ros::Duration( (1 + rand()%5 ) /2 ); //to rotate in [ pi/4 , 3*Pi/2] range
-					std::cout << "Duration: " << rotateDuration << std::endl;
-					while(ros::Time::now() - rotateStartTime < rotateDuration) {
-						move(0, dir * ROTATE_SPEED_RADPS); // Rotate right (FIXME:or left)
-						// move(0, ROTATE_SPEED_RADPS);
-						fsm = FSM_MOVE_FORWARD;
-					}
-					/////////////////////// ANSWER CODE END ///////////////////
-				}
+                prev_x_2 = x_2;
+                prev_y_2 = y_2;
+                std::cout << "\nodom Estimate : " << odom_d << std::endl;
+                std::cout << "\nodom_combined Estimate : " << odom_comb_d << std::endl;
+
+                if(m_cmd == ROTATE_REL && end == true) {
+                    rotateStartTime = ros::Time::now();
+                    std::cout << "vbbbbbbbbbbbbbbbbbbbb=> " << m_val << std::endl;
+                    rotate_rel(m_val);
+                    end = true;
+                }
 				ros::spinOnce(); // Need to call this function often to allow ROS to process incoming messages
 				rate.sleep(); // Sleep for the rest of the cycle, to enforce the FSM loop rate
 			}
@@ -295,9 +223,7 @@ int main(int argc, char **argv) {
 		return EXIT_FAILURE;
 	}
 	//<---
-
-
-
+    
 	ros::init(argc, argv, "turtle_motions"); // Initiate new ROS node named "turtle_motions"
 	ros::NodeHandle n;
 	TurtleMotions walker(n, cmd, val);

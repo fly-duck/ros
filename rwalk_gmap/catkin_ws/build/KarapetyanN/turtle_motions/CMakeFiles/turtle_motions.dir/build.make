@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/turtlebot/nk/rwalk_gmap/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/turtlebot/nk/rwalk_gmap/catkin_ws/build
+CMAKE_BINARY_DIR = /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build
 
 # Include any dependencies generated for this target.
 include KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/depend.make
@@ -50,18 +50,18 @@ include KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/progress.make
 include KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/flags.make
 
 KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/src/turtle_motions.cpp.o: KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/flags.make
-KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/src/turtle_motions.cpp.o: /home/turtlebot/nk/rwalk_gmap/catkin_ws/src/KarapetyanN/turtle_motions/src/turtle_motions.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/turtlebot/nk/rwalk_gmap/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_1)
+KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/src/turtle_motions.cpp.o: /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/turtle_motions/src/turtle_motions.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/src/turtle_motions.cpp.o"
-	cd /home/turtlebot/nk/rwalk_gmap/catkin_ws/build/KarapetyanN/turtle_motions && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/turtle_motions.dir/src/turtle_motions.cpp.o -c /home/turtlebot/nk/rwalk_gmap/catkin_ws/src/KarapetyanN/turtle_motions/src/turtle_motions.cpp
+	cd /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/turtle_motions && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/turtle_motions.dir/src/turtle_motions.cpp.o -c /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/turtle_motions/src/turtle_motions.cpp
 
 KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/src/turtle_motions.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/turtle_motions.dir/src/turtle_motions.cpp.i"
-	cd /home/turtlebot/nk/rwalk_gmap/catkin_ws/build/KarapetyanN/turtle_motions && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/turtlebot/nk/rwalk_gmap/catkin_ws/src/KarapetyanN/turtle_motions/src/turtle_motions.cpp > CMakeFiles/turtle_motions.dir/src/turtle_motions.cpp.i
+	cd /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/turtle_motions && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/turtle_motions/src/turtle_motions.cpp > CMakeFiles/turtle_motions.dir/src/turtle_motions.cpp.i
 
 KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/src/turtle_motions.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/turtle_motions.dir/src/turtle_motions.cpp.s"
-	cd /home/turtlebot/nk/rwalk_gmap/catkin_ws/build/KarapetyanN/turtle_motions && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/turtlebot/nk/rwalk_gmap/catkin_ws/src/KarapetyanN/turtle_motions/src/turtle_motions.cpp -o CMakeFiles/turtle_motions.dir/src/turtle_motions.cpp.s
+	cd /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/turtle_motions && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/turtle_motions/src/turtle_motions.cpp -o CMakeFiles/turtle_motions.dir/src/turtle_motions.cpp.s
 
 KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/src/turtle_motions.cpp.o.requires:
 .PHONY : KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/src/turtle_motions.cpp.o.requires
@@ -79,69 +79,69 @@ turtle_motions_OBJECTS = \
 # External object files for target turtle_motions
 turtle_motions_EXTERNAL_OBJECTS =
 
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/src/turtle_motions.cpp.o
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/build.make
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /opt/ros/indigo/lib/libroscpp.so
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /opt/ros/indigo/lib/librosconsole.so
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /opt/ros/indigo/lib/librosconsole_log4cxx.so
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /opt/ros/indigo/lib/librosconsole_backend_interface.so
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/liblog4cxx.so
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /opt/ros/indigo/lib/libxmlrpcpp.so
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /opt/ros/indigo/lib/libroscpp_serialization.so
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /opt/ros/indigo/lib/librostime.so
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /opt/ros/indigo/lib/libcpp_common.so
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_videostab.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_superres.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_ocl.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_legacy.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_gpu.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_contrib.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_legacy.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4.8
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable /home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions"
-	cd /home/turtlebot/nk/rwalk_gmap/catkin_ws/build/KarapetyanN/turtle_motions && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/turtle_motions.dir/link.txt --verbose=$(VERBOSE)
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/src/turtle_motions.cpp.o
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/build.make
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /opt/ros/indigo/lib/libroscpp.so
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /opt/ros/indigo/lib/librosconsole.so
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /opt/ros/indigo/lib/librosconsole_log4cxx.so
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /opt/ros/indigo/lib/librosconsole_backend_interface.so
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/liblog4cxx.so
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /opt/ros/indigo/lib/libxmlrpcpp.so
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /opt/ros/indigo/lib/libroscpp_serialization.so
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /opt/ros/indigo/lib/librostime.so
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /opt/ros/indigo/lib/libcpp_common.so
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_videostab.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_superres.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_ocl.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_legacy.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_gpu.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_contrib.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_legacy.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: /usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4.8
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions: KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions"
+	cd /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/turtle_motions && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/turtle_motions.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/build: /home/turtlebot/nk/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions
+KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/build: /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/turtle_motions/turtle_motions
 .PHONY : KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/build
 
 KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/requires: KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/src/turtle_motions.cpp.o.requires
 .PHONY : KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/requires
 
 KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/clean:
-	cd /home/turtlebot/nk/rwalk_gmap/catkin_ws/build/KarapetyanN/turtle_motions && $(CMAKE_COMMAND) -P CMakeFiles/turtle_motions.dir/cmake_clean.cmake
+	cd /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/turtle_motions && $(CMAKE_COMMAND) -P CMakeFiles/turtle_motions.dir/cmake_clean.cmake
 .PHONY : KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/clean
 
 KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/depend:
-	cd /home/turtlebot/nk/rwalk_gmap/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/turtlebot/nk/rwalk_gmap/catkin_ws/src /home/turtlebot/nk/rwalk_gmap/catkin_ws/src/KarapetyanN/turtle_motions /home/turtlebot/nk/rwalk_gmap/catkin_ws/build /home/turtlebot/nk/rwalk_gmap/catkin_ws/build/KarapetyanN/turtle_motions /home/turtlebot/nk/rwalk_gmap/catkin_ws/build/KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/turtle_motions /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/turtle_motions /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/depend
 

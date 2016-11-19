@@ -1,8 +1,8 @@
-# Install script for directory: /home/turtlebot/nk/rwalk_gmap/catkin_ws/src/KarapetyanN/random_walk
+# Install script for directory: /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/random_walk
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  SET(CMAKE_INSTALL_PREFIX "/home/turtlebot/nk/rwalk_gmap/catkin_ws/install")
+  SET(CMAKE_INSTALL_PREFIX "/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/install")
 ENDIF(NOT DEFINED CMAKE_INSTALL_PREFIX)
 STRING(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ IF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/turtlebot/nk/rwalk_gmap/catkin_ws/build/KarapetyanN/random_walk/catkin_generated/installspace/random_walk.pc")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/random_walk/catkin_generated/installspace/random_walk.pc")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/random_walk/cmake" TYPE FILE FILES
-    "/home/turtlebot/nk/rwalk_gmap/catkin_ws/build/KarapetyanN/random_walk/catkin_generated/installspace/random_walkConfig.cmake"
-    "/home/turtlebot/nk/rwalk_gmap/catkin_ws/build/KarapetyanN/random_walk/catkin_generated/installspace/random_walkConfig-version.cmake"
+    "/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/random_walk/catkin_generated/installspace/random_walkConfig.cmake"
+    "/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/random_walk/catkin_generated/installspace/random_walkConfig-version.cmake"
     )
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/random_walk" TYPE FILE FILES "/home/turtlebot/nk/rwalk_gmap/catkin_ws/src/KarapetyanN/random_walk/package.xml")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/random_walk" TYPE FILE FILES "/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/random_walk/package.xml")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 

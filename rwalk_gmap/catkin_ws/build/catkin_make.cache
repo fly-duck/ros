@@ -1,2 +1,2 @@
 KarapetyanN/grid_mapper:KarapetyanN/random_walk:KarapetyanN/turtle_motions
--DCATKIN_DEVEL_PREFIX=/home/turtlebot/nk/rwalk_gmap/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/turtlebot/nk/rwalk_gmap/catkin_ws/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/install -G Unix Makefiles

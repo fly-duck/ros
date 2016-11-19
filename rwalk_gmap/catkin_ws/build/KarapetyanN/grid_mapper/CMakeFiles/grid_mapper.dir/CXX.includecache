@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper/src/grid_mapper.cpp
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper/src/grid_mapper.cpp
 ros/ros.h
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper/src/ros/ros.h
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper/src/ros/ros.h
 nav_msgs/Odometry.h
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper/src/nav_msgs/Odometry.h
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper/src/nav_msgs/Odometry.h
 geometry_msgs/Twist.h
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper/src/geometry_msgs/Twist.h
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper/src/geometry_msgs/Twist.h
 sensor_msgs/LaserScan.h
-/home/turtlebot/nk/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper/src/sensor_msgs/LaserScan.h
+/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper/src/sensor_msgs/LaserScan.h
 cstdlib
 -
 ctime

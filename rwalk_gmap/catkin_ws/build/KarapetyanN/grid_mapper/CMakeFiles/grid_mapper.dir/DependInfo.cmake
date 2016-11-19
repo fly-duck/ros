@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/turtlebot/nk/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper/src/grid_mapper.cpp" "/home/turtlebot/nk/rwalk_gmap/catkin_ws/build/KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/src/grid_mapper.cpp.o"
+  "/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper/src/grid_mapper.cpp" "/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/src/grid_mapper.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -21,6 +21,8 @@ SET(CMAKE_TARGET_LINKED_INFO_FILES
 
 # The include file search paths:
 SET(CMAKE_C_TARGET_INCLUDE_PATH
+  "/usr/local/include/bullet"
+  "/usr/local/include"
   "/opt/ros/indigo/include"
   "/usr/include/opencv"
   "KarapetyanN/grid_mapper"
