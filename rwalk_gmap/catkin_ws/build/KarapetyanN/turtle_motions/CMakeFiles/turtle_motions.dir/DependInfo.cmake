@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/turtle_motions/src/turtle_motions.cpp" "/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/src/turtle_motions.cpp.o"
+  "/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/turtle_motions/src/turtle_motions.cpp" "/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/turtle_motions/CMakeFiles/turtle_motions.dir/src/turtle_motions.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

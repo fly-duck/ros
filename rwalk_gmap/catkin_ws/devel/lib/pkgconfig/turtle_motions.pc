@@ -1,8 +1,8 @@
-prefix=/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel
+prefix=/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel
 
 Name: turtle_motions
 Description: Description of turtle_motions
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib 
+Libs: -L/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib 
 Requires: 

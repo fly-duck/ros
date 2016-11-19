@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/install/setup.sh
+    local-name: /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/install/setup.sh

@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build
+CMAKE_BINARY_DIR = /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build
 
 # Include any dependencies generated for this target.
 include KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/depend.make
@@ -50,18 +50,18 @@ include KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/progress.make
 include KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/flags.make
 
 KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/src/grid_mapper.cpp.o: KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/flags.make
-KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/src/grid_mapper.cpp.o: /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper/src/grid_mapper.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_1)
+KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/src/grid_mapper.cpp.o: /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper/src/grid_mapper.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/src/grid_mapper.cpp.o"
-	cd /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/grid_mapper && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/grid_mapper.dir/src/grid_mapper.cpp.o -c /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper/src/grid_mapper.cpp
+	cd /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/grid_mapper && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/grid_mapper.dir/src/grid_mapper.cpp.o -c /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper/src/grid_mapper.cpp
 
 KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/src/grid_mapper.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/grid_mapper.dir/src/grid_mapper.cpp.i"
-	cd /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/grid_mapper && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper/src/grid_mapper.cpp > CMakeFiles/grid_mapper.dir/src/grid_mapper.cpp.i
+	cd /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/grid_mapper && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper/src/grid_mapper.cpp > CMakeFiles/grid_mapper.dir/src/grid_mapper.cpp.i
 
 KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/src/grid_mapper.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/grid_mapper.dir/src/grid_mapper.cpp.s"
-	cd /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/grid_mapper && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper/src/grid_mapper.cpp -o CMakeFiles/grid_mapper.dir/src/grid_mapper.cpp.s
+	cd /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/grid_mapper && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper/src/grid_mapper.cpp -o CMakeFiles/grid_mapper.dir/src/grid_mapper.cpp.s
 
 KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/src/grid_mapper.cpp.o.requires:
 .PHONY : KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/src/grid_mapper.cpp.o.requires
@@ -79,74 +79,74 @@ grid_mapper_OBJECTS = \
 # External object files for target grid_mapper
 grid_mapper_EXTERNAL_OBJECTS =
 
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/src/grid_mapper.cpp.o
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/build.make
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/libtf.so
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/libtf2_ros.so
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/libactionlib.so
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/libtf2.so
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/libmessage_filters.so
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/libroscpp.so
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/libxmlrpcpp.so
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/librosconsole.so
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/librosconsole_log4cxx.so
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/librosconsole_backend_interface.so
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/liblog4cxx.so
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/libroscpp_serialization.so
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/librostime.so
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/libcpp_common.so
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_videostab.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_superres.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_ocl.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_legacy.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_gpu.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_contrib.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_legacy.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4.8
-/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper"
-	cd /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/grid_mapper && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/grid_mapper.dir/link.txt --verbose=$(VERBOSE)
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/src/grid_mapper.cpp.o
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/build.make
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/libtf.so
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/libtf2_ros.so
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/libactionlib.so
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/libtf2.so
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/libmessage_filters.so
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/libroscpp.so
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/libxmlrpcpp.so
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/librosconsole.so
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/librosconsole_log4cxx.so
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/librosconsole_backend_interface.so
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/liblog4cxx.so
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/libroscpp_serialization.so
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/librostime.so
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /opt/ros/indigo/lib/libcpp_common.so
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_videostab.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_superres.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_ocl.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_legacy.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_gpu.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_contrib.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_legacy.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_ml.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_features2d.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_flann.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: /usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4.8
+/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper: KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper"
+	cd /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/grid_mapper && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/grid_mapper.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/build: /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper
+KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/build: /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib/grid_mapper/grid_mapper
 .PHONY : KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/build
 
 KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/requires: KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/src/grid_mapper.cpp.o.requires
 .PHONY : KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/requires
 
 KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/clean:
-	cd /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/grid_mapper && $(CMAKE_COMMAND) -P CMakeFiles/grid_mapper.dir/cmake_clean.cmake
+	cd /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/grid_mapper && $(CMAKE_COMMAND) -P CMakeFiles/grid_mapper.dir/cmake_clean.cmake
 .PHONY : KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/clean
 
 KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/depend:
-	cd /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/grid_mapper /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/src /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/grid_mapper /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : KarapetyanN/grid_mapper/CMakeFiles/grid_mapper.dir/depend
 

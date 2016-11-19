@@ -1,23 +1,23 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/CMakeFiles/CMakeTmp
+Change Dir: /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec3532765590/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3532765590.dir/build.make CMakeFiles/cmTryCompileExec3532765590.dir/build
-make[1]: Entering directory `/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec3532765590.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec3532765590.dir/CheckSymbolExists.c.o   -c /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec3532765590
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3532765590.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTryCompileExec3532765590.dir/CheckSymbolExists.c.o  -o cmTryCompileExec3532765590 -rdynamic 
-CMakeFiles/cmTryCompileExec3532765590.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:/usr/bin/make "cmTryCompileExec3127544227/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3127544227.dir/build.make CMakeFiles/cmTryCompileExec3127544227.dir/build
+make[1]: Entering directory `/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3127544227.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec3127544227.dir/CheckSymbolExists.c.o   -c /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec3127544227
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3127544227.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec3127544227.dir/CheckSymbolExists.c.o  -o cmTryCompileExec3127544227 -rdynamic 
+CMakeFiles/cmTryCompileExec3127544227.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-make[1]: *** [cmTryCompileExec3532765590] Error 1
-make[1]: Leaving directory `/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/CMakeFiles/CMakeTmp'
-make: *** [cmTryCompileExec3532765590/fast] Error 2
+make[1]: *** [cmTryCompileExec3127544227] Error 1
+make[1]: Leaving directory `/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec3127544227/fast] Error 2
 
-File /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -33,21 +33,21 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/CMakeFiles/CMakeTmp
+Change Dir: /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec674179828/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec674179828.dir/build.make CMakeFiles/cmTryCompileExec674179828.dir/build
-make[1]: Entering directory `/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec674179828.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec674179828.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec674179828
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec674179828.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec674179828.dir/CheckFunctionExists.c.o  -o cmTryCompileExec674179828 -rdynamic -lpthreads 
+Run Build Command:/usr/bin/make "cmTryCompileExec3500762713/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3500762713.dir/build.make CMakeFiles/cmTryCompileExec3500762713.dir/build
+make[1]: Entering directory `/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3500762713.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec3500762713.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3500762713
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3500762713.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec3500762713.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3500762713 -rdynamic -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-make[1]: Leaving directory `/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/CMakeFiles/CMakeTmp'
-make[1]: *** [cmTryCompileExec674179828] Error 1
-make: *** [cmTryCompileExec674179828/fast] Error 2
+make[1]: *** [cmTryCompileExec3500762713] Error 1
+make[1]: Leaving directory `/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec3500762713/fast] Error 2
 
 

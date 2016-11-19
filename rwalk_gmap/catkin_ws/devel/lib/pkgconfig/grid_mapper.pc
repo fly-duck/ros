@@ -1,8 +1,8 @@
-prefix=/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel
+prefix=/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel
 
 Name: grid_mapper
 Description: Description of grid_mapper
 Version: 0.0.1
 Cflags: 
-Libs: -L/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/devel/lib 
+Libs: -L/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/devel/lib 
 Requires: message_runtime roscpp rospy std_msgs tf geometry_msgs nav_msgs visualization_msgs sensor_msgs

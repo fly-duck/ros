@@ -16,8 +16,6 @@ SET(CMAKE_TARGET_LINKED_INFO_FILES
 
 # The include file search paths:
 SET(CMAKE_C_TARGET_INCLUDE_PATH
-  "/usr/local/include/bullet"
-  "/usr/local/include"
   "/opt/ros/indigo/include"
   "/usr/include/opencv"
   "KarapetyanN/grid_mapper"

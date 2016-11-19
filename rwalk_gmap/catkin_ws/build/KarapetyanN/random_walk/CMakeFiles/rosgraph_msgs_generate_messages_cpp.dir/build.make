@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build
+CMAKE_BINARY_DIR = /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build
 
 # Utility rule file for rosgraph_msgs_generate_messages_cpp.
 
@@ -56,10 +56,10 @@ KarapetyanN/random_walk/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 .PHONY : KarapetyanN/random_walk/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 
 KarapetyanN/random_walk/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean:
-	cd /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/random_walk && $(CMAKE_COMMAND) -P CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/random_walk && $(CMAKE_COMMAND) -P CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : KarapetyanN/random_walk/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
 
 KarapetyanN/random_walk/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/depend:
-	cd /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/random_walk /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/random_walk /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/random_walk/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/src /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/random_walk /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/random_walk /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/random_walk/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : KarapetyanN/random_walk/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/depend
 

@@ -53,7 +53,7 @@ class TurtleMotions {
 			double roll, pitch;
 			x_1 = msg->pose.pose.position.x;
 			y_1 = msg->pose.pose.position.y;
-			std::cout << x_1 << " -- " << y_1 << std::endl;
+			std::cout << "ODom x_1 " << x_1 << " -- y_1 " << y_1 << std::endl;
 			// x = -msg->pose.pose.position.y;
 			//y = msg->pose.pose.position.x;
 			heading_1=tf::getYaw(msg->pose.pose.orientation);
@@ -125,10 +125,15 @@ class TurtleMotions {
             bool end = false;
 			while (ros::ok()) { // Keep spinning loop until user presses Ctrl+C
 
-                odom_d += sqrt(pow(prev_x_1 - x_1, 2) + pow(prev_y_1 - y_1, 2));
-                odom_comb_d += sqrt(pow(prev_x_2 - x_2, 2) + pow(prev_y_2 - y_2, 2));
+                odom_d = sqrt(pow(prev_x_1 - x_1, 2) + pow(prev_y_1 - y_1, 2));
+                odom_comb_d = sqrt(pow(prev_x_2 - x_2, 2) + pow(prev_y_2 - y_2, 2));
+                std::cout << "\nodom Estimate : " << odom_d << std::endl;
+                std::cout << "\nodom_combined Estimate : " << odom_comb_d << std::endl;
+                if(end) {
+                    break;
+                }
 
-                if(m_cmd == MOVE && end == true) {
+                if(m_cmd == MOVE && !end) {
                     moveStartTime = ros::Time::now();
                     translate(m_val);
                     end = true;
@@ -138,10 +143,8 @@ class TurtleMotions {
 
                 prev_x_2 = x_2;
                 prev_y_2 = y_2;
-                std::cout << "\nodom Estimate : " << odom_d << std::endl;
-                std::cout << "\nodom_combined Estimate : " << odom_comb_d << std::endl;
 
-                if(m_cmd == ROTATE_REL && end == true) {
+                if(m_cmd == ROTATE_REL && !end) {
                     rotateStartTime = ros::Time::now();
                     std::cout << "vbbbbbbbbbbbbbbbbbbbb=> " << m_val << std::endl;
                     rotate_rel(m_val);

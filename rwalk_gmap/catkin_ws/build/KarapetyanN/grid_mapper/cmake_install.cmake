@@ -1,8 +1,8 @@
-# Install script for directory: /home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper
+# Install script for directory: /home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  SET(CMAKE_INSTALL_PREFIX "/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/install")
+  SET(CMAKE_INSTALL_PREFIX "/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/install")
 ENDIF(NOT DEFINED CMAKE_INSTALL_PREFIX)
 STRING(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ IF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/grid_mapper/catkin_generated/installspace/grid_mapper.pc")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/grid_mapper/catkin_generated/installspace/grid_mapper.pc")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/grid_mapper/cmake" TYPE FILE FILES
-    "/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/grid_mapper/catkin_generated/installspace/grid_mapperConfig.cmake"
-    "/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/grid_mapper/catkin_generated/installspace/grid_mapperConfig-version.cmake"
+    "/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/grid_mapper/catkin_generated/installspace/grid_mapperConfig.cmake"
+    "/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/build/KarapetyanN/grid_mapper/catkin_generated/installspace/grid_mapperConfig-version.cmake"
     )
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/grid_mapper" TYPE FILE FILES "/home/ubundr/ros_repo/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper/package.xml")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/grid_mapper" TYPE FILE FILES "/home/turtlebot/nk/ros/rwalk_gmap/catkin_ws/src/KarapetyanN/grid_mapper/package.xml")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
