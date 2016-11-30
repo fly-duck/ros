@@ -83,12 +83,12 @@ class RandomWalk {
 					std::cout << "fsm not is spin  -> " << fsm << "--\n";
 
 					if(closestRange < PROXIMITY_RANGE_M) {
-                        fsm = FSM_ROTATE;
-                        std::cout << "Starting to rotate...\n";
-                        rotateStartTime = ros::Time::now();
-                        rotateDuration = ros::Duration(double(1 + (rand()%7)) * 0.5); //to rotate in [ pi/4 , 3*Pi/2] range
-                        //m_direction = (rand()%2 == 0) ? -1 : 1;
-                        //std::cout << "direction  " << m_direction << "--\n"; 
+						fsm = FSM_ROTATE;
+						std::cout << "Starting to rotate...\n";
+						rotateStartTime = ros::Time::now();
+						rotateDuration = ros::Duration(double(1 + (rand()%7)) * 0.5); //to rotate in [ pi/4 , 3*Pi/2] range
+						m_direction = (rand()%2 == 0) ? -1 : 1;
+						std::cout << "direction  " << m_direction << "--\n"; 
 					}
 
 					/////////////////////// ANSWER CODE END ///////////////////
@@ -131,11 +131,11 @@ class RandomWalk {
 				if(fsm == FSM_MOVE_FORWARD) {
 					move(FORWARD_SPEED_MPS, 0);
 				} else {
-                    move(0, m_direction * ROTATE_SPEED_RADPS); // Rotate right (FIXME:or left)
-                    if(ros::Time::now() - rotateStartTime <= rotateDuration) {
-                        std::cout << "Rotation is ended!\n";
-                        fsm = FSM_MOVE_FORWARD;
-                    }
+					move(0, m_direction * ROTATE_SPEED_RADPS); // Rotate right (FIXME:or left)
+					if(ros::Time::now() - rotateStartTime >= rotateDuration) {
+						std::cout << "Rotation is ended!\n";
+						fsm = FSM_MOVE_FORWARD;
+					}
 					/////////////////////// ANSWER CODE END ///////////////////
 				}
 				ros::spinOnce(); // Need to call this function often to allow ROS to process incoming messages
@@ -164,7 +164,7 @@ class RandomWalk {
 		ros::Time rotateStartTime; // Start time of the rotation
 		ros::Duration rotateDuration; // Duration of the rotation
 
-        int m_direction;
+		int m_direction;
 
 };
 
