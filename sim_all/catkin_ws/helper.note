@@ -1,0 +1,3 @@
+rosrun
+rosrun stage_ros stageros $(rospack find stage_ros)/world/cave.world
+rosrun potential_field potential_field 0 1 3 5

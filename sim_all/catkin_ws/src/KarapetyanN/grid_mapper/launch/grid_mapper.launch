@@ -1,0 +1,13 @@
+<launch>
+
+<arg  name="width"  default="160" />
+<arg  name="height" default="160" />
+
+<node name="grid_mapper" pkg="grid_mapper" type="grid_mapper"
+args="$(arg width) $(arg height)" />
+
+<node name="stage_ros" pkg="stage_ros" type="stageros" args="$(find stage_ros)/world/cave.world" />
+
+<node name="random_walk" pkg="random_walk" type="random_walk"/>
+
+</launch>

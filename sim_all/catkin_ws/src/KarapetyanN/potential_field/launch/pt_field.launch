@@ -1,0 +1,12 @@
+<launch>
+
+    <node name="stage_ros" pkg="stage_ros" type="stageros" args="$(find stage_ros)/world/cave.world" />
+
+<arg    name="r"  default="0" />
+<arg    name="nr"  default="1" />
+<arg    name="x"  default="5" />
+<arg    name="y" default="7" />
+
+    <node name="potential_field-fin" pkg="potential_field-fin" type="potential_field-fin" args="$(arg r) $(arg nr) $(arg x) $(arg y)" />
+
+</launch>

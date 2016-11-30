@@ -1,0 +1,13 @@
+<launch>
+<include file="$(find kobuki_node)/launch/minimal.launch" />
+<include file="$(find openni_lanuch/launch/openni.launch" />
+
+<node name="depthimage_to_laserscan" pkg="depthimage_to_laserscan" type="depthimage_to_laserscan" 
+args="image:=/robot_1/camera/depth/image_raw"/>
+
+<!--
+<include file="$(find turtlebot_bringup)/launch/3dsensor.launch" />
+-->
+
+<node name="random_walk" pkg="random_walk" type="random_walk" output="screen" />
+</launch>
