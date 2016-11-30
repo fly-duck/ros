@@ -83,8 +83,8 @@ class RandomWalk {
 					std::cout << "Starting to rotate...\n";
 					rotateStartTime = ros::Time::now();
 					rotateDuration = ros::Duration(double(1 + (rand()%7)) * 0.5); //to rotate in [ pi/4 , 3*Pi/2] range
-					//m_direction = (rand()%2 == 0) ? -1 : 1;
-					//std::cout << "direction  " << m_direction << "--\n"; 
+					m_direction = (rand()%2 == 0) ? -1 : 1;
+					std::cout << "direction  " << m_direction << "--\n"; 
 				}
 
 				/////////////////////// ANSWER CODE END ///////////////////
@@ -112,7 +112,7 @@ class RandomWalk {
 					move(FORWARD_SPEED_MPS, 0);
 				} else {
                     move(0, m_direction * ROTATE_SPEED_RADPS); // Rotate right (FIXME:or left)
-                    if(ros::Time::now() - rotateStartTime <= rotateDuration) {
+                    if(ros::Time::now() - rotateStartTime >= rotateDuration) {
                         std::cout << "Rotation is ended!\n";
                         fsm = FSM_MOVE_FORWARD;
                     }
