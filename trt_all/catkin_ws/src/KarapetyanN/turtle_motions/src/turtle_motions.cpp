@@ -1,6 +1,7 @@
 #include "ros/ros.h"
 #include "nav_msgs/Odometry.h"
 #include "geometry_msgs/Twist.h"
+#include "geometry_msgs/PoseWithCovarianceStamped.h"
 #include "sensor_msgs/LaserScan.h"
 #include "kobuki_msgs/CliffEvent.h"
 #include "kobuki_msgs/BumperEvent.h"
@@ -35,10 +36,8 @@ class TurtleMotions {
 				cliffSub = nh.subscribe("mobile_base/events/cliff", 1, &TurtleMotions::cliffSensorCallback, this);
 				bumperSub = nh.subscribe("mobile_base/events/bumper", 1, &TurtleMotions::bumperCallback, this);
 
-				poseSub_1 = nh.subscribe("odom", 1, \
-						&TurtleMotions::poseCallback_1, this);
-				poseSub_2 = nh.subscribe("odom_combined", 1, \
-						&TurtleMotions::poseCallback_2, this);
+				poseSub_1 = nh.subscribe("odom", 1, &TurtleMotions::poseCallback, this);
+				poseSub_2 = nh.subscribe("robot_pose_ekf/odom_combined", 1, &TurtleMotions::poseCallback_comb, this);
 			}
 
 		// Send a velocity command
@@ -49,7 +48,7 @@ class TurtleMotions {
 			commandPub.publish(msg);
 		}
 
-		void poseCallback_1(const nav_msgs::Odometry::ConstPtr& msg) {
+		void poseCallback(const nav_msgs::Odometry::ConstPtr& msg) {
 			double roll, pitch;
 			x_1 = msg->pose.pose.position.x;
 			y_1 = msg->pose.pose.position.y;
@@ -59,7 +58,7 @@ class TurtleMotions {
 			heading_1=tf::getYaw(msg->pose.pose.orientation);
 		};
 
-		void poseCallback_2(const nav_msgs::Odometry::ConstPtr& msg) {
+		void poseCallback_comb(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr& msg) {
 			double roll, pitch;
 			std::cout << x_2 << " -- " << y_2 << std::endl;
 			x_2 = msg->pose.pose.position.x;
@@ -71,10 +70,10 @@ class TurtleMotions {
 
 		void translate(double distance) {
 			ros::Duration time = ros::Duration(distance / FORWARD_SPEED_MPS) ;
-			while(ros::Time::now() - moveStartTime < time) {
-				move(FORWARD_SPEED_MPS, 0);
+			if(ros::Time::now() - moveStartTime >= time) {
+				move(0, 0);
 			}
-			move(0, 0);
+			move(FORWARD_SPEED_MPS, 0);
 		}
 		
 		void rotate_rel(double angle) {
@@ -125,10 +124,6 @@ class TurtleMotions {
             bool end = false;
 			while (ros::ok()) { // Keep spinning loop until user presses Ctrl+C
 
-                odom_d = sqrt(pow(prev_x_1 - x_1, 2) + pow(prev_y_1 - y_1, 2));
-                odom_comb_d = sqrt(pow(prev_x_2 - x_2, 2) + pow(prev_y_2 - y_2, 2));
-                std::cout << "\nodom Estimate : " << odom_d << std::endl;
-                std::cout << "\nodom_combined Estimate : " << odom_comb_d << std::endl;
                 if(end) {
                     break;
                 }

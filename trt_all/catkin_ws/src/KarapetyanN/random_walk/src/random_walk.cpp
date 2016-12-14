@@ -83,10 +83,7 @@ class RandomWalk {
 					std::cout << "fsm not is spin  -> " << fsm << "--\n";
 
 					if(closestRange < PROXIMITY_RANGE_M) {
-                        fsm = FSM_ROTATE;
-                        std::cout << "Starting to rotate...\n";
-                        rotateStartTime = ros::Time::now();
-                        rotateDuration = ros::Duration(double(1 + (rand()%7)) * 0.5); //to rotate in [ pi/4 , 3*Pi/2] range
+                        startRotation();
                         //m_direction = (rand()%2 == 0) ? -1 : 1;
                         //std::cout << "direction  " << m_direction << "--\n"; 
 					}
@@ -95,17 +92,26 @@ class RandomWalk {
 				}
 			}
 		}
+
+        void startRotation()
+        {
+            fsm = FSM_ROTATE;
+            std::cout << "Starting to rotate...\n";
+            rotateStartTime = ros::Time::now();
+            rotateDuration = ros::Duration(double(1 + (rand()%7)) * 0.5); //to rotate in [ pi/4 , 3*Pi/2] range
+        }
+
 		void  cliffSensorCallback(const kobuki_msgs::CliffEventConstPtr msg) {
 			if (fsm == FSM_MOVE_FORWARD && msg->state == kobuki_msgs::CliffEvent::CLIFF)
 			{
-				fsm = FSM_ROTATE;
+                startRotation();
 			}
 		}
 
 		void  bumperCallback(const kobuki_msgs::BumperEventConstPtr msg) {
 			if (fsm == FSM_MOVE_FORWARD && msg->state == kobuki_msgs::BumperEvent::PRESSED)
 			{
-				fsm = FSM_ROTATE;
+                startRotation();
 			}
 		}
 
