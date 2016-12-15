@@ -11,8 +11,6 @@
 <param name="output_frame" value="odom"/>
 </node>
 
-<!--node pkg="create node" type="kinect_breaker_enabler.py" name="kinect_breaker_enabler" /-->
-
 <include file="$(find turtlebot_bringup)/launch/minimal.launch" />
 
 <include file="$(find openni_launch)/launch/openni.launch">

@@ -21,15 +21,15 @@ class TurtleMotions {
 			rotateStartTime(ros::Time::now()),
 			moveStartTime(ros::Time::now()),
 			rotateDuration(0.f) {
+
 				// Initialize random time generator
 				srand(time(NULL));
 				// Advertise a new publisher for the simulated robot's velocity command topic
 				// (the second argument indicates that if multiple command messages are in
 				// the queue to be sent, only the last command will be sent)
-                // DEBUG: for sim
-                // commandPub = nh.advertise<geometry_msgs::Twist>("cmd_vel", 1);
-                // commandPub = nh.advertise<geometry_msgs::Twist>("follower_velocity_smoother/raw_cmd_vel", 1);
-				commandPub = nh.advertise<geometry_msgs::Twist>("cmd_vel_mux/input/navi", 1);
+				// commandPub = nh.advertise<geometry_msgs::Twist>("follower_velocity_smoother/raw_cmd_vel", 1);
+				commandPub = nh.advertise<geometry_msgs::Twist>("mobile_base/commands/velocity", 1);
+
 				// Subscribe to the simulated robot's laser scan topic and tell ROS to call
 				// this->commandCallback() whenever a new message is published on that topic
 				laserSub = nh.subscribe("scan", 1, &TurtleMotions::commandCallback, this);
@@ -48,44 +48,84 @@ class TurtleMotions {
 			commandPub.publish(msg);
 		}
 
+		//FIXME: this could be replaced into separate srtuct
 		void poseCallback(const nav_msgs::Odometry::ConstPtr& msg) {
 			double roll, pitch;
-			x_1 = msg->pose.pose.position.x;
-			y_1 = msg->pose.pose.position.y;
-			std::cout << "ODom x_1 " << x_1 << " -- y_1 " << y_1 << std::endl;
+			x = msg->pose.pose.position.x;
+			y = msg->pose.pose.position.y;
+			std::cout << "Odom x " << x << " -- y " << y << std::endl;
 			// x = -msg->pose.pose.position.y;
 			//y = msg->pose.pose.position.x;
-			heading_1=tf::getYaw(msg->pose.pose.orientation);
+			heading=tf::getYaw(msg->pose.pose.orientation);
 		};
 
+		//FIXME: this could be replaced into separate srtuct
 		void poseCallback_comb(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr& msg) {
 			double roll, pitch;
-			std::cout << x_2 << " -- " << y_2 << std::endl;
-			x_2 = msg->pose.pose.position.x;
-			y_2 = msg->pose.pose.position.y;
+			std::cout << x_comb << " -- " << y_comb << std::endl;
+			x_comb = msg->pose.pose.position.x;
+			y_comb = msg->pose.pose.position.y;
 			// x = -msg->pose.pose.position.y;
 			//y = msg->pose.pose.position.x;
-			heading_2=tf::getYaw(msg->pose.pose.orientation);
+			heading_comb=tf::getYaw(msg->pose.pose.orientation);
 		};
 
 		void translate(double distance) {
-			ros::Duration time = ros::Duration(distance / FORWARD_SPEED_MPS) ;
-			if(ros::Time::now() - moveStartTime >= time) {
-				move(0, 0);
-			}
-			move(FORWARD_SPEED_MPS, 0);
-		}
+			ros::Rate rate(10); // Specify the FSM loop rate in Hz
+
+            double odom_d = 0.0;
+            double odom_comb_d = 0.0;
+            double prev_x = x;
+            double prev_y = y;
+
+            double prev_x_comb = x_comb;
+            double prev_y_comb = y_comb;
+            
+            ros::Duration time = ros::Duration(distance / FORWARD_SPEED_MPS) ;
+
+            while (ros::ok()) { // Keep spinning loop until user presses Ctrl+C
+                if(ros::Time::now() - moveStartTime >= time) {
+                    move(0, 0);
+                    break;
+                }
+                move(FORWARD_SPEED_MPS, 0);
+                ros::spinOnce(); // Need to call this function often to allow ROS to process incoming messages
+                rate.sleep(); // Sleep for the rest of the cycle, to enforce the FSM loop rate
+            }
+
+            odom_d = prev_x - x;
+            odom_comb_d = prev_x_comb - x_comb;
+            std::cout << "Printing the Odometry information for translate: \n";
+            std::cout << "commanded distance: " << distance << "\n";
+            std::cout << "odom estimate: " <<  odom_d << "\n"; 
+            std::cout << "odom_comb estimate: " <<  odom_comb_d << "\n"; 
+        }
 		
+
+		//the angle is in degree not in radian
 		void rotate_rel(double angle) {
-			ros::Duration time = ros::Duration(abs(angle / ROTATE_SPEED_RADPS));
-			double i = (angle > 0) ? 1.0 : -1.0;
+			std::cout << "ROTATE_REL -> " << angle << '\n';
+			ros::Duration time = ros::Duration(abs(((angle * M_PI)/180) / ROTATE_SPEED_RADPS));
+			double dir = (angle > 0) ? 1.0 : -1.0;
 			while(ros::Time::now() - rotateStartTime < time) {
-				move(0, i*ROTATE_SPEED_RADPS);
+				move(0, dir*ROTATE_SPEED_RADPS);
 			}
 			move(0, 0);
 		}
 		
 		void rotate_abs(double angle) {
+			std::cout << "ROTATE_ABS -> " << angle << '\n';
+			angle = heading - angle;
+			angle = atan2(sin(angle), cos(angle));// to get an angle from [-pi/2, pi/2] angles
+			rotate_rel((angle*180)/M_PI);
+			std::cout << "ROTATE_ABS normailized angle rotated -> " << angle << '\n';
+		}
+
+		void make_square(double side) {
+			for(int i = 1; i <=4; i++) {
+				translate(side);
+				rotate_rel(90);
+			}
 		}
 
 		// Process the incoming laser scan message
@@ -105,49 +145,21 @@ class TurtleMotions {
 				fsm = FSM_ROTATE;
 			}
 		}
-
+		
 		// Main FSM loop for ensuring that ROS messages are
 		// processed in a timely manner, and also for sending
 		// velocity controls to the simulated robot based on the FSM state
-		void spin() {
-			double dir = (rand()%2 == 0) ? -1 : 1;
-			std::cout << "direction  " << dir << "--\n"; 
-			ros::Rate rate(10); // Specify the FSM loop rate in Hz
-
-			double odom_d = 0.0;
-			double odom_comb_d = 0.0;
-            double prev_x_1 = x_1;
-            double prev_y_1 = y_1;
-
-            double prev_x_2 = x_2;
-            double prev_y_2 = y_2;
-            bool end = false;
-			while (ros::ok()) { // Keep spinning loop until user presses Ctrl+C
-
-                if(end) {
-                    break;
-                }
-
-                if(m_cmd == MOVE && !end) {
+		void start() {
+                if(m_cmd == MOVE) {
                     moveStartTime = ros::Time::now();
                     translate(m_val);
-                    end = true;
                 }
-                prev_x_1 = x_1;
-                prev_y_1 = y_1;
 
-                prev_x_2 = x_2;
-                prev_y_2 = y_2;
-
-                if(m_cmd == ROTATE_REL && !end) {
+                if(m_cmd == ROTATE_REL) {
                     rotateStartTime = ros::Time::now();
                     std::cout << "vbbbbbbbbbbbbbbbbbbbb=> " << m_val << std::endl;
                     rotate_rel(m_val);
-                    end = true;
                 }
-				ros::spinOnce(); // Need to call this function often to allow ROS to process incoming messages
-				rate.sleep(); // Sleep for the rest of the cycle, to enforce the FSM loop rate
-			}
 		}
 
 		enum FSM {FSM_MOVE_FORWARD, FSM_ROTATE};
@@ -172,13 +184,13 @@ class TurtleMotions {
 		ros::Subscriber poseSub_1; // Subscriber to the current robot's ground truth pose topic
 		ros::Subscriber poseSub_2; // Subscriber to the current robot's ground truth pose topic
 
-		double x_1; // in simulated Stage units, + = East/right
-		double y_1; // in simulated Stage units, + = North/up
-		double heading_1; // in radians, 0 = East (+x dir.), pi/2 = North (+y dir.)
+		double x; // in simulated Stage units, + = East/right
+		double y; // in simulated Stage units, + = North/up
+		double heading; // in radians, 0 = East (+x dir.), pi/2 = North (+y dir.)
 
-		double x_2; // in simulated Stage units, + = East/right
-		double y_2; // in simulated Stage units, + = North/up
-		double heading_2; // in radians, 0 = East (+x dir.), pi/2 = North (+y dir.)
+		double x_comb; // in simulated Stage units, + = East/right
+		double y_comb; // in simulated Stage units, + = North/up
+		double heading_comb; // in radians, 0 = East (+x dir.), pi/2 = North (+y dir.)
 
 		enum CMD m_cmd;
 		double m_val;
@@ -225,6 +237,6 @@ int main(int argc, char **argv) {
 	ros::init(argc, argv, "turtle_motions"); // Initiate new ROS node named "turtle_motions"
 	ros::NodeHandle n;
 	TurtleMotions walker(n, cmd, val);
-	walker.spin(); // Execute FSM loop
+	walker.start();
 	return 0;
 }

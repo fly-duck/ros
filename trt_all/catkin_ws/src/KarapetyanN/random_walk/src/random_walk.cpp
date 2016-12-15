@@ -18,13 +18,14 @@ class RandomWalk {
 			rotateDuration(0.f) {
 				// Initialize random time generator
 				srand(time(NULL));
+
 				// Advertise a new publisher for the simulated robot's velocity command topic
 				// (the second argument indicates that if multiple command messages are in
 				// the queue to be sent, only the last command will be sent)
-				// DEBUG: for sim				commandPub = nh.advertise<geometry_msgs::Twist>("cmd_vel", 1);
 				//commandPub = nh.advertise<geometry_msgs::Twist>("follower_velocity_smoother/raw_cmd_vel", 1);
 				//commandPub = nh.advertise<geometry_msgs::Twist>("cmd_vel_mux/input/navi", 1);
 				commandPub = nh.advertise<geometry_msgs::Twist>("mobile_base/commands/velocity", 1);
+
 				// Subscribe to the simulated robot's laser scan topic and tell ROS to call
 				// this->commandCallback() whenever a new message is published on that topic
 				laserSub = nh.subscribe("scan", 1, &RandomWalk::commandCallback, this);
@@ -37,7 +38,7 @@ class RandomWalk {
 			geometry_msgs::Twist msg; // The default constructor will set all commands to 0
 			msg.linear.x = linearVelMPS;
 			msg.angular.z = angularVelRadPS;
-std::cout << "\n\n\n\n_________________________________________________________________________\n\n\n\n";
+			std::cout << "\n\n\n\n_________________________________________________________________________\n\n\n\n";
 			commandPub.publish(msg);
 		}
 
@@ -88,7 +89,6 @@ std::cout << "\n\n\n\n__________________________________________________________
                         startRotation();
 					}
 
-					/////////////////////// ANSWER CODE END ///////////////////
 				}
 			}
 		}
