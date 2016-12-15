@@ -11,7 +11,7 @@
 <param name="output_frame" value="odom"/>
 </node>
 
-<include file="$(find turtlebot_bringup)/launch/minimal.launch" />
+<include file="$(find kobuki_node)/launch/minimal.launch" />
 
 <include file="$(find openni_launch)/launch/openni.launch">
 <arg name="camera" value="camera"/>
@@ -33,5 +33,11 @@
 <param name="range_min" value="0.45"/>
 <remap from="image" to="camera/depth/image_raw"/>
 </node>
+
+
+
+<arg    name="cmd"  default="1" />
+<arg    name="val"  default="90" />
+<node name="turtle_motions" pkg="turtle_motions" type="turtle_motions" output="screen" args="$(arg cmd) $(arg val)"/>
 
 </launch>
