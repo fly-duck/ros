@@ -1,0 +1,28 @@
+<launch>
+
+<arg name="map_file" default="$(find pf2dlocalizer)/maps/amoco_hall/amoco_hall.yaml" />
+
+<node pkg="map_server" type="map_server" name="map_server" args="$(arg map_file)" respawn="false" >
+    <param name="frame_id" value="/odom" />
+</node>
+
+
+<arg name="path" default="$(find pf2dlocalizer)/bags/assignment_1b.bag" />
+
+<node pkg="rosbag" type="play" name="rosbag" output="screen" args="$(arg path) -r 2" />
+
+<arg  name="_environment"  default="$(find pf2dlocalizer)/maps/amoco_hall/amoco_hall.yaml" />
+<arg  name="_pf_size" default="100" />
+<arg  name="_processed_scans_number" default="10" />
+
+<group ns="robot_1">
+<node name="pf2dlocalizerNode" pkg="pf2dlocalizer" type="pf2dlocalizerNode" output="screen"> 
+    <param name="environment" value="$(arg _environment)" />
+    <param name="pf_size" value="$(arg _pf_size)" />
+    <param name="processed_scans_number" value="$(arg _processed_scans_number)" />
+</node>
+</group>
+
+<!--node pkg="tf" type="static_transform_publisher" name="robot_tfs" args="0 0 0 0 0 0 base_footprint base_laser_link 100" /-->
+
+</launch>
