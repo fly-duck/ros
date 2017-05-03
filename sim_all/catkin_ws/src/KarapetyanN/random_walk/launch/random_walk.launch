@@ -1,4 +1,4 @@
 <launch>
-    <node name="stage_ros" pkg="stage_ros" type="stageros" args="$(find stage_ros)/world/cave.world" />
+    <node name="stage_ros" pkg="stage_ros" type="stageros" args="$(find random_walk)/worlds/cave_single.world" />
     <node name="random_walk" pkg="random_walk" type="random_walk" output="screen" />
 </launch>
